@@ -6,18 +6,16 @@ import reprodutorMusical.ReprodutorMusical;
 
 public class Iphone implements AparelhoTelefonico, NavegadorInternet, ReprodutorMusical {
 
-    private String modelo;
-    private String numeroSerie;
+    private final String modelo;
+    private final String numeroSerie;
     private Integer volume;
     private Integer luminosidade;
 
     
 
-    public Iphone(String modelo, String numeroSerie, Integer volume, Integer luminosidade) {
+    public Iphone(String modelo, String numeroSerie) {
         this.modelo = modelo;
         this.numeroSerie = numeroSerie;
-        this.volume = volume;
-        this.luminosidade = luminosidade;
     }
 
     @Override
@@ -131,16 +129,8 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
     public String getNumeroSerie() {
         return numeroSerie;
-    }
-
-    public void setNumeroSerie(String numeroSerie) {
-        this.numeroSerie = numeroSerie;
     }
 
     public Integer getVolume() {
@@ -148,6 +138,8 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
     }
 
     public void setVolume(Integer volume) {
+        if(volume > 10 || volume < 0)
+            throw new IllegalArgumentException("O Volume não deve ser menor que 0 nem maior que 10");
         this.volume = volume;
     }
 
@@ -155,6 +147,8 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
         return luminosidade;
     }
     public void setLuminosidade(Integer luminosidade) {
+        if(luminosidade > 10 || luminosidade < 0)
+            throw new IllegalArgumentException("A luminosidade não deve ser menor que 0 nem maior que 10");
         this.luminosidade = luminosidade;
     }
 
