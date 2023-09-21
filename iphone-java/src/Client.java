@@ -1,5 +1,7 @@
+import iphone.Iphone;
+
 public class Client {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Iphone iphone = new Iphone("Iphone 1", "ZX45ER");
     }
 }
