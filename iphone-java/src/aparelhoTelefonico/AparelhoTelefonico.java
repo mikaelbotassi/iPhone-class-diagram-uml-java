@@ -1,6 +1,9 @@
 package aparelhoTelefonico;
 
 public interface AparelhoTelefonico{
+    public void adicionarContato(String telefone, String nome);
+    public void removerContato(String nome);
+
     public void fazerChamada(String tel);
     public void receberChamada(String tel);
     public void encerrarChamada();
